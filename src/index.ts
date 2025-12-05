@@ -1,12 +1,21 @@
 #!/usr/bin/env node
 
-import {
-  createDirNameFromBranchName,
-  getGitRemoteUrl,
-  gitClone,
-} from "./gitclone.js";
+import { readFileSync } from "fs";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
+import { gitClone } from "./gitclone.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const args = process.argv.slice(2);
+
+if (args.length === 1 && args[0] === "--version") {
+  const packageJsonPath = join(__dirname, "../package.json");
+  const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf-8"));
+  console.log(`gitclone version: ${packageJson.version}`);
+  process.exit(0);
+}
 
 if (args.length === 1 && args[0] === "--help") {
   console.log(`

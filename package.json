@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A command that clones a given branch of an existing git repo and puts the clone next to the existing repo.",
   "main": "dist/index.js",
   "bin": {
@@ -33,5 +33,14 @@
   "engines": {
     "node": ">=22"
   },
-  "type": "module"
+  "type": "module",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
 }
