@@ -1,0 +1,38 @@
+{
+  "name": "@hsalameh/gitclone",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.0",
+  "description": "A command that clones a given branch of an existing git repo and puts the clone next to the existing repo.",
+  "main": "dist/index.js",
+  "bin": {
+    "gitclone": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "watch": "tsc --watch",
+    "test:watch": "vitest --watch",
+    "package": "pnpm build && mkdir -p release && npm pack --pack-destination release",
+    "publish": "pnpm package && npm publish ./release/*.tgz",
+    "prepare": "corepack enable"
+  },
+  "keywords": [],
+  "author": "hsalameh",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "jiti": "^2.6.1",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.48.1",
+    "vitest": "^0.34.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module"
+}
