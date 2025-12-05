@@ -15,7 +15,6 @@
     "watch": "tsc --watch",
     "test:watch": "vitest --watch",
     "package": "pnpm build && mkdir -p release && npm pack --pack-destination release",
-    "publish": "pnpm package && npm publish ./release/*.tgz",
     "prepare": "corepack enable"
   },
   "keywords": [],
