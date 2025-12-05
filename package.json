@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A command that clones a given branch of an existing git repo and puts the clone next to the existing repo.",
   "main": "dist/index.js",
   "bin": {
